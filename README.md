@@ -19,10 +19,10 @@ When extracted, the application maintains a hyper-efficient, self-contained port
 
 ```text
 📁 Open Launcher/
-├── ⚙️ Launcher.exe     # The main compiled PyQt6 application binary
-├── ⚙️ updater.exe      # Self-contained, single-file upgrade engine
-├── 📄 game.json       # Dynamic library database (auto-generates if missing)
-└── 📁 PyQt6/          # Streamed native graphics binaries and core DLLs
+├── ⚙️ Launcher.exe   
+├── ⚙️ LaunchAutoUpdater.bat
+├── 📄 game.json      
+└── 📁 PyQt6/         
 ```
 
 ---
@@ -59,16 +59,12 @@ If You Would Like to give us the compiled Launcher with the dlls and other thing
 To compile this project locally from the source files using the identical portable development environment, initialize your environment path and execute the Nuitka compilation matrices:
 
 
-### 1. Compile Core Application (Standalone Folder Output)
+### Compile Core Application (Standalone Folder Output)
 ```cmd
 python -m nuitka --standalone --enable-plugin=pyqt6 --windows-console-mode=disable main.py
 ```
 *(Note: Rename the compiled executable inside the output `.dist` folder from `main.exe` to `Launcher.exe` to match ecosystem process maps).*
 
-### 2. Compile Core Maintenance Engine (Single Executable Output)
-```cmd
-python -m nuitka --onefile --windows-console-mode=disable updater.py
-```
 PS If you dont have python added to PATH then you will need to do
 
 ```cmd
